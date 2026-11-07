@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>糖心社区-热门内容推荐与社区玩法解析_糖心社区专题_内容社区指南</title>
+  <meta name="description" content="糖心社区专题页汇集热门内容推荐、社区玩法解析、最新动态与用户真实评论。围绕糖心社区的内容生态、兴趣分类、浏览体验与互动方式展开，帮助新老用户快速了解这个内容社区，发现值得关注的话题与栏目。" />
+  <meta name="keywords" content="糖心社区,糖心社区推荐,糖心社区热门内容,糖心社区玩法,内容社区专题" />
+  <style>
+    /* ----- 基础变量与重置 ----- */
+    :root {
+      --cream-bg: #fdf8f2;
+      --cream-card: #ffffff;
+      --cream-soft: #f6eee4;
+      --ink: #2e2a26;
+      --ink-muted: #6b625a;
+      --brand: #b96b4b;
+      --brand-soft: #e9c9b8;
+      --brand-deep: #8e4e34;
+      --line: #e9ded3;
+      --shadow: 0 10px 30px -12px rgba(80, 55, 35, 0.18);
+      --shadow-hover: 0 18px 38px -14px rgba(80, 55, 35, 0.28);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --font: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+      --max: 1200px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--cream-bg);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul, ol { list-style: none; }
+    .tx-container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .tx-section {
+      padding: 52px 0 36px;
+    }
+    .tx-section-title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--ink);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tx-section-title::before {
+      content: '';
+      width: 6px;
+      height: 26px;
+      border-radius: 4px;
+      background: var(--brand);
+      display: inline-block;
+    }
+    .tx-section-sub {
+      color: var(--ink-muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+      max-width: 760px;
+    }
+    .tx-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      background: var(--brand);
+      color: #fff;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .tx-btn:hover { background: var(--brand-deep); transform: translateY(-1px); }
+    .tx-btn-ghost {
+      background: transparent;
+      color: var(--brand);
+      border: 1.5px solid var(--brand-soft);
+    }
+    .tx-btn-ghost:hover { background: var(--brand-soft); color: var(--brand-deep); }
+    /* ----- 导航 ----- */
+    .tx-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(253, 248, 242, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .tx-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      height: 66px;
+    }
+    .tx-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--ink);
+      letter-spacing: -0.3px;
+      flex-shrink: 0;
+    }
+    .tx-logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), #d99b7c);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      box-shadow: 0 4px 10px -4px rgba(185, 107, 75, 0.5);
+    }
+    .tx-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .tx-nav-links a {
+      padding: 7px 13px;
+      font-size: 14px;
+      color: var(--ink-muted);
+      border-radius: 999px;
+      transition: all 0.18s ease;
+      font-weight: 500;
+    }
+    .tx-nav-links a:hover {
+      background: var(--cream-soft);
+      color: var(--ink);
+    }
+    .tx-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .tx-nav-search {
+      display: flex;
+      align-items: center;
+      background: var(--cream-soft);
+      border-radius: 999px;
+      padding: 0 4px 0 16px;
+      height: 38px;
+      border: 1px solid transparent;
+      transition: border 0.2s;
+    }
+    .tx-nav-search:focus-within { border-color: var(--brand-soft); }
+    .tx-nav-search input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 13.5px;
+      width: 130px;
+      color: var(--ink);
+      font-family: var(--font);
+    }
+    .tx-nav-search input::placeholder { color: #b0a69d; }
+    .tx-nav-search button {
+      border: none;
+      background: var(--brand);
+      color: #fff;
+      border-radius: 999px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      font-size: 14px;
+      display: grid;
+      place-items: center;
+    }
+    /* ----- Banner ----- */
+    .tx-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 54px 0 60px;
+      background:
+        radial-gradient(880px 320px at 88% 8%, rgba(233, 201, 184, 0.55), transparent 62%),
+        radial-gradient(640px 280px at 8% 92%, rgba(246, 224, 206, 0.65), transparent 64%),
+        var(--cream-bg);
+      border-bottom: 1px solid var(--line);
+    }
+    .tx-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .tx-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 14px 5px 10px;
+      font-size: 13px;
+      color: var(--brand-deep);
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+    .tx-hero-badge span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #67b26f;
+      box-shadow: 0 0 0 3px rgba(103, 178, 111, 0.22);
+    }
+    .tx-hero h1 {
+      font-size: 44px;
+      line-height: 1.22;
+      letter-spacing: -0.8px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .tx-hero h1 em {
+      font-style: normal;
+      color: var(--brand);
+      border-bottom: 3px solid var(--brand-soft);
+    }
+    .tx-hero-desc {
+      font-size: 16.5px;
+      color: var(--ink-muted);
+      max-width: 560px;
+      margin-bottom: 26px;
+      line-height: 1.8;
+    }
+    .tx-hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .tx-hero-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tx-hero-tags a {
+      font-size: 12.5px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 13px;
+      color: var(--ink-muted);
+      transition: all 0.18s;
+    }
+    .tx-hero-tags a:hover { border-color: var(--brand-soft); color: var(--brand); }
+    .tx-hero-panel {
+      background: var(--cream-card);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 26px 24px 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .tx-hero-panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .tx-hero-panel-head h3 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .tx-hero-panel-head span {
+      font-size: 12px;
+      color: var(--ink-muted);
+      background: var(--cream-soft);
+      border-radius: 999px;
+      padding: 3px 10px;
+    }
+    .tx-hero-search {
+      display: flex;
+      background: var(--cream-soft);
+      border-radius: 14px;
+      padding: 4px;
+      margin-bottom: 16px;
+    }
+    .tx-hero-search input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 0 12px;
+      font-size: 14px;
+      outline: none;
+      font-family: var(--font);
+      color: var(--ink);
+    }
+    .tx-hero-search input::placeholder { color: #b0a69d; }
+    .tx-hero-search button {
+      border: none;
+      background: var(--brand);
+      color: #fff;
+      border-radius: 11px;
+      padding: 0 18px;
+      height: 38px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font);
+    }
+    .tx-hero-mini-list { display: grid; gap: 8px; }
+    .tx-hero-mini-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      transition: background 0.18s;
+    }
+    .tx-hero-mini-item:hover { background: var(--cream-soft); }
+    .tx-hero-mini-item b { font-weight: 600; color: var(--ink); }
+    .tx-hero-mini-item small { color: var(--ink-muted); font-size: 12px; }
+    /* ----- 分类入口 ----- */
+    .tx-cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .tx-cat-item {
+      background: var(--cream-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 18px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow);
+    }
+    .tx-cat-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: var(--brand-soft); }
+    .tx-cat-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--cream-soft);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .tx-cat-item strong { font-size: 15px; display: block; margin-bottom: 2px; }
+    .tx-cat-item small { font-size: 12px; color: var(--ink-muted); }
+    /* ----- 推荐卡片 ----- */
+    .tx-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .tx-card {
+      background: var(--cream-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .tx-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .tx-card-cover {
+      height: 144px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 14px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.3px;
+    }
+    .tx-card-cover.g1 { background: linear-gradient(135deg, #d99b7c, #b96b4b); }
+    .tx-card-cover.g2 { background: linear-gradient(135deg, #8fae9b, #5e8a74); }
+    .tx-card-cover.g3 { background: linear-gradient(135deg, #c2a27e, #9c7a52); }
+    .tx-card-cover.g4 { background: linear-gradient(135deg, #a58fb8, #7d6592); }
+    .tx-card-cover.g5 { background: linear-gradient(135deg, #7fa8c2, #547f9e); }
+    .tx-card-cover.g6 { background: linear-gradient(135deg, #c98f8f, #a35f5f); }
+    .tx-card-cover .tx-card-cover-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(6px);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 11.5px;
+      font-weight: 600;
+    }
+    .tx-card-body { padding: 16px 18px 18px; flex: 1; display: flex; flex-direction: column; }
+    .tx-card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+    .tx-card-tags span {
+      font-size: 11.5px;
+      background: var(--cream-soft);
+      color: var(--brand-deep);
+      border-radius: 999px;
+      padding: 2px 9px;
+      font-weight: 600;
+    }
+    .tx-card-body h4 { font-size: 15.5px; margin-bottom: 6px; line-height: 1.4; }
+    .tx-card-body p { font-size: 13px; color: var(--ink-muted); line-height: 1.65; margin-bottom: 12px; flex: 1; }
+    .tx-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--ink-muted);
+      padding-top: 10px;
+      border-top: 1px dashed var(--line);
+    }
+    .tx-card-meta b { color: var(--brand); font-weight: 700; }
+    /* ----- 最新动态列表 ----- */
+    .tx-update-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .tx-update-item {
+      background: var(--cream-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: all 0.2s;
+      box-shadow: var(--shadow);
+    }
+    .tx-update-item:hover { border-color: var(--brand-soft); transform: translateX(3px); }
+    .tx-update-time {
+      font-size: 12px;
+      color: #fff;
+      background: var(--brand);
+      border-radius: 8px;
+      padding: 4px 9px;
+      flex-shrink: 0;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .tx-update-item h5 { font-size: 14.5px; margin-bottom: 3px; }
+    .tx-update-item p { font-size: 13px; color: var(--ink-muted); line-height: 1.55; }
+    /* ----- 深度解析正文 ----- */
+    .tx-article {
+      background: var(--cream-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 38px 42px;
+      box-shadow: var(--shadow);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .tx-article h3 {
+      font-size: 20px;
+      margin: 26px 0 10px;
+      color: var(--brand-deep);
+      font-weight: 700;
+    }
+    .tx-article h3:first-child { margin-top: 0; }
+    .tx-article p {
+      font-size: 15.5px;
+      color: #4a423d;
+      margin-bottom: 16px;
+      line-height: 1.9;
+    }
+    /* ----- FAQ ----- */
+    .tx-faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .tx-faq-item {
+      background: var(--cream-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+      transition: all 0.2s;
+    }
+    .tx-faq-item:hover { border-color: var(--brand-soft); }
+    .tx-faq-item h4 {
+      font-size: 15.5px;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .tx-faq-item h4::before {
+      content: 'Q';
+      background: var(--brand-soft);
+      color: var(--brand-deep);
+      font-size: 11px;
+      font-weight: 800;
+      border-radius: 6px;
+      padding: 1px 7px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tx-faq-item p { font-size: 13.5px; color: var(--ink-muted); line-height: 1.75; }
+    /* ----- 评论 ----- */
+    .tx-comment-list { display: grid; gap: 12px; }
+    .tx-comment {
+      background: var(--cream-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      display: flex;
+      gap: 14px;
+      box-shadow: var(--shadow);
+    }
+    .tx-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #fff;
+      font-size: 14px;
+    }
+    .tx-comment-body { flex: 1; }
+    .tx-comment-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+    .tx-comment-head b { font-size: 13.5px; }
+    .tx-comment-head small { font-size: 11.5px; color: var(--ink-muted); }
+    .tx-comment-body p { font-size: 13.5px; color: #514943; line-height: 1.65; }
+    /* ----- 资讯卡片 ----- */
+    .tx-news-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .tx-news-item {
+      background: var(--cream-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .tx-news-item:hover { border-color: var(--brand-soft); transform: translateY(-2px); }
+    .tx-news-item time { font-size: 12px; color: var(--brand); font-weight: 600; margin-bottom: 6px; }
+    .tx-news-item h4 { font-size: 15px; margin-bottom: 6px; line-height: 1.45; }
+    .tx-news-item p { font-size: 13px; color: var(--ink-muted); line-height: 1.6; flex: 1; }
+    /* ----- 订阅条 ----- */
+    .tx-subscribe {
+      background: linear-gradient(135deg, var(--brand), #d99b7c);
+      border-radius: var(--radius);
+      padding: 38px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      color: #fff;
+      box-shadow: var(--shadow);
+      flex-wrap: wrap;
+    }
+    .tx-subscribe h3 { font-size: 22px; margin-bottom: 6px; }
+    .tx-subscribe p { font-size: 14px; opacity: 0.9; }
+    .tx-subscribe-form {
+      display: flex;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      padding: 4px;
+      backdrop-filter: blur(6px);
+      min-width: 300px;
+    }
+    .tx-subscribe-form input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 0 16px;
+      color: #fff;
+      outline: none;
+      font-size: 14px;
+      font-family: var(--font);
+    }
+    .tx-subscribe-form input::placeholder { color: rgba(255, 255, 255, 0.7); }
+    .tx-subscribe-form button {
+      border: none;
+      background: #fff;
+      color: var(--brand-deep);
+      border-radius: 999px;
+      padding: 0 20px;
+      height: 38px;
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor: pointer;
+      font-family: var(--font);
+    }
+    /* ----- 页脚 ----- */
+    .tx-footer {
+      border-top: 1px solid var(--line);
+      padding: 38px 0 30px;
+      margin-top: 20px;
+      background: var(--cream-card);
+    }
+    .tx-footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .tx-footer-brand { max-width: 340px; }
+    .tx-footer-brand p { font-size: 13px; color: var(--ink-muted); margin-top: 10px; line-height: 1.7; }
+    .tx-footer-links { display: flex; gap: 40px; flex-wrap: wrap; }
+    .tx-footer-col h5 { font-size: 13.5px; margin-bottom: 10px; color: var(--ink); }
+    .tx-footer-col a { display: block; font-size: 12.5px; color: var(--ink-muted); padding: 3px 0; transition: color 0.15s; }
+    .tx-footer-col a:hover { color: var(--brand); }
+    .tx-footer-bottom {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      color: var(--ink-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    /* ----- 响应式 ----- */
+    @media (max-width: 1024px) {
+      .tx-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .tx-hero h1 { font-size: 36px; }
+      .tx-card-grid { grid-template-columns: repeat(2, 1fr); }
+      .tx-cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .tx-article { padding: 28px 26px; }
+    }
+    @media (max-width: 720px) {
+      .tx-nav-links { display: none; }
+      .tx-nav-search input { width: 90px; }
+      .tx-hero h1 { font-size: 28px; }
+      .tx-hero-desc { font-size: 15px; }
+      .tx-card-grid { grid-template-columns: 1fr; }
+      .tx-update-list { grid-template-columns: 1fr; }
+      .tx-faq-grid { grid-template-columns: 1fr; }
+      .tx-news-grid { grid-template-columns: 1fr; }
+      .tx-cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .tx-subscribe { padding: 26px 22px; }
+      .tx-subscribe-form { min-width: 0; width: 100%; }
+      .tx-section { padding: 38px 0 26px; }
+      .tx-article { padding: 22px 18px; }
+    }
+    @media (max-width: 400px) {
+      .tx-cat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- ===================== 导航 ===================== -->
+  <header class="tx-nav">
+    <div class="tx-container tx-nav-inner">
+      <a href="/#tx-hero" class="tx-logo">
+        <span class="tx-logo-mark">糖</span>
+        糖心社区
+      </a>
+      <nav class="tx-nav-links">
+        <a href="/#tx-categories">内容分类</a>
+        <a href="/#tx-hot">热门推荐</a>
+        <a href="/#tx-updates">最新动态</a>
+        <a href="/#tx-deep">深度解析</a>
+        <a href="/#tx-faq">常见问题</a>
+        <a href="/#tx-comments">社区评论</a>
+        <a href="/#tx-news">社区资讯</a>
+      </nav>
+      <div class="tx-nav-right">
+        <div class="tx-nav-search">
+          <input type="text" placeholder="搜内容 / 话题" aria-label="搜索糖心社区内容" />
+          <button aria-label="搜索">🔍</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== 首屏 Banner ===================== -->
+  <section class="tx-hero" id="tx-hero">
+    <div class="tx-container tx-hero-grid">
+      <div>
+        <div class="tx-hero-badge"><span></span> 内容社区 · 今日更新 12 条</div>
+        <h1>糖心社区<br /><em>内容专题</em>与社区玩法解析</h1>
+        <p class="tx-hero-desc">
+          糖心社区是一个围绕兴趣话题、内容分享与社区互动展开的内容型站点。本页持续整理社区热门内容、分类入口、更新动态与真实讨论，
+          帮助你在不迷路的前提下找到值得看、值得聊、值得收藏的栏目与话题。
+        </p>
+        <div class="tx-hero-actions">
+          <a href="/#tx-hot" class="tx-btn">看热门推荐</a>
+          <a href="/#tx-deep" class="tx-btn tx-btn-ghost">读深度解析</a>
+        </div>
+        <div class="tx-hero-tags">
+          <a href="/#tx-categories">兴趣分类</a>
+          <a href="/#tx-categories">生活分享</a>
+          <a href="/#tx-categories">话题讨论</a>
+          <a href="/#tx-categories">图文内容</a>
+          <a href="/#tx-categories">视频推荐</a>
+          <a href="/#tx-categories">新人指南</a>
+          <a href="/#tx-categories">社区精选</a>
+        </div>
+      </div>
+      <aside class="tx-hero-panel">
+        <div class="tx-hero-panel-head">
+          <h3>社区热搜</h3>
+          <span>实时更新</span>
+        </div>
+        <div class="tx-hero-search">
+          <input type="text" placeholder="输入关键词，找内容或话题" aria-label="社区内搜索" />
+          <button>搜索</button>
+        </div>
+        <div class="tx-hero-mini-list">
+          <a href="/#tx-hot" class="tx-hero-mini-item"><b># 糖心社区本周精选</b><small>热度 9.8k</small></a>
+          <a href="/#tx-hot" class="tx-hero-mini-item"><b># 新人如何逛社区</b><small>热度 7.2k</small></a>
+          <a href="/#tx-updates" class="tx-hero-mini-item"><b># 今日更新速览</b><small>热度 6.5k</small></a>
+          <a href="/#tx-deep" class="tx-hero-mini-item"><b># 内容分类怎么选</b><small>热度 5.9k</small></a>
+          <a href="/#tx-comments" class="tx-hero-mini-item"><b># 社区真实讨论</b><small>热度 5.1k</small></a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===================== 内容简介 ===================== -->
+  <section class="tx-section" id="tx-intro">
+    <div class="tx-container">
+      <h2 class="tx-section-title">糖心社区是什么，适合谁逛</h2>
+      <p class="tx-section-sub">在进入具体栏目之前，先了解这个内容社区的基本定位与浏览方式。</p>
+      <div class="tx-article" style="max-width:100%;">
+        <p>
+          糖心社区是一个以兴趣内容为核心的内容型社区。用户在这里浏览图文分享、话题讨论、生活记录与精选推荐，
+          通过分类入口和标签体系找到自己感兴趣的内容方向。与单篇内容页不同，糖心社区更强调“内容聚合”，
+          一个话题下往往汇集了多篇相关分享与讨论，适合想快速了解某一兴趣领域、又不想在多个页面间反复跳转的读者。
+        </p>
+        <p>
+          从内容消费角度看，糖心社区的浏览路径通常是从热门推荐或最新动态进入，再通过分类入口和标签延伸阅读。
+          本站专题页围绕糖心社区的常见使用场景，整理了热门内容推荐、最新更新、深度解析、常见问题与真实用户评论，
+          帮助新用户建立对社区内容结构的基本认识，也为老用户提供一份可收藏的浏览参考。
+        </p>
+        <p>
+          如果你关心的是“糖心社区里有什么值得看的内容”“怎么快速找到感兴趣的话题”“社区更新节奏如何”，
+          本页会从内容类型、推荐逻辑、浏览体验和互动氛围几个角度逐一展开，尽量把搜索意图讲清楚。
+          页面内容会随着社区动态持续补充，建议收藏本页，方便下次直接找到入口。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 分类入口 ===================== -->
+  <section class="tx-section" id="tx-categories">
+    <div class="tx-container">
+      <h2 class="tx-section-title">内容分类入口</h2>
+      <p class="tx-section-sub">按兴趣方向快速进入不同内容板块，减少盲目翻找的时间。</p>
+      <div class="tx-cat-grid">
+        <a href="/#tx-hot" class="tx-cat-item"><span class="tx-cat-icon">🌿</span><span><strong>生活分享</strong><small>日常记录 · 经验交流</small></span></a>
+        <a href="/#tx-hot" class="tx-cat-item"><span class="tx-cat-icon">💬</span><span><strong>话题讨论</strong><small>观点碰撞 · 热帖追踪</small></span></a>
+        <a href="/#tx-hot" class="tx-cat-item"><span class="tx-cat-icon">📷</span><span><strong>图文精选</strong><small>视觉记录 · 图文合集</small></span></a>
+        <a href="/#tx-hot" class="tx-cat-item"><span class="tx-cat-icon">🎬</span><span><strong>视频推荐</strong><small>短视频 · 内容安利</small></span></a>
+        <a href="/#tx-hot" class="tx-cat-item"><span class="tx-cat-icon">🧭</span><span><strong>新人指南</strong><small>入门路径 · 避坑提示</small></span></a>
+        <a href="/#tx-hot" class="tx-cat-item"><span class="tx-cat-icon">🔥</span><span><strong>社区精选</strong><small>编辑推荐 · 高赞内容</small></span></a>
+        <a href="/#tx-hot" class="tx-cat-item"><span class="tx-cat-icon">🎧</span><span><strong>兴趣标签</strong><small>音乐 · 阅读 · 手作</small></span></a>
+        <a href="/#tx-hot" class="tx-cat-item"><span class="tx-cat-icon">🗂️</span><span><strong>专题聚合</strong><small>主题合集 · 系列内容</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 热门推荐 ===================== -->
+  <section class="tx-section" id="tx-hot">
+    <div class="tx-container">
+      <h2 class="tx-section-title">热门内容推荐</h2>
+      <p class="tx-section-sub">来自糖心社区近期讨论度较高的内容方向，覆盖不同兴趣类型，供浏览参考。</p>
+      <div class="tx-card-grid">
+        <article class="tx-card">
+          <div class="tx-card-cover g1">社区一周精选<span class="tx-card-cover-tag">编辑推荐</span></div>
+          <div class="tx-card-body">
+            <div class="tx-card-tags"><span>精选合集</span><span>高赞</span><span>社区</span></div>
+            <h4>糖心社区一周内容精选合集</h4>
+            <p>把本周讨论度较高的图文分享、话题帖和实用经验集中整理，适合第一次逛社区的人快速了解内容风格。</p>
+            <div class="tx-card-meta"><span>更新：11月7日</span><b>热度 9.8k</b></div>
+          </div>
+        </article>
+        <article class="tx-card">
+          <div class="tx-card-cover g2">新人逛社区指南<span class="tx-card-cover-tag">新人向</span></div>
+          <div class="tx-card-body">
+            <div class="tx-card-tags"><span>入门</span><span>指南</span><span>社区</span></div>
+            <h4>第一次进糖心社区怎么逛</h4>
+            <p>从分类入口、标签筛选到热门推荐，梳理一条适合新用户的浏览顺序，减少在信息流里反复翻找的时间。</p>
+            <div class="tx-card-meta"><span>更新：11月6日</span><b>热度 7.2k</b></div>
+          </div>
+        </article>
+        <article class="tx-card">
+          <div class="tx-card-cover g3">生活记录专题<span class="tx-card-cover-tag">图文</span></div>
+          <div class="tx-card-body">
+            <div class="tx-card-tags"><span>生活分享</span><span>记录</span><span>图文</span></div>
+            <h4>生活记录类内容为什么受欢迎</h4>
+            <p>围绕日常记录类分享展开，分析这类内容在糖心社区中的浏览节奏、互动特点与适合人群。</p>
+            <div class="tx-card-meta"><span>更新：11月5日</span><b>热度 6.9k</b></div>
+          </div>
+        </article>
+        <article class="tx-card">
+          <div class="tx-card-cover g4">兴趣话题讨论<span class="tx-card-cover-tag">讨论</span></div>
+          <div class="tx-card-body">
+            <div class="tx-card-tags"><span>话题</span><span>观点</span><span>互动</span></div>
+            <h4>社区话题讨论的参与方式</h4>
+            <p>糖心社区的话题讨论并不只是看帖，还包括观点补充和延伸分享，这篇梳理了常见的参与方式与讨论氛围。</p>
+            <div class="tx-card-meta"><span>更新：11月4日</span><b>热度 6.3k</b></div>
+          </div>
+        </article>
+        <article class="tx-card">
+          <div class="tx-card-cover g5">视频安利清单<span class="tx-card-cover-tag">视频</span></div>
+          <div class="tx-card-body">
+            <div class="tx-card-tags"><span>视频推荐</span><span>安利</span><span>内容</span></div>
+            <h4>视频类内容在社区的打开方式</h4>
+            <p>从短内容安利到系列推荐，视频类内容在糖心社区里往往更适合搭配标签和分类一起浏览。</p>
+            <div class="tx-card-meta"><span>更新：11月3日</span><b>热度 5.8k</b></div>
+          </div>
+        </article>
+        <article class="tx-card">
+          <div class="tx-card-cover g6">社区避坑提示<span class="tx-card-cover-tag">实用</span></div>
+          <div class="tx-card-body">
+            <div class="tx-card-tags"><span>避坑</span><span>经验</span><span>社区</span></div>
+            <h4>逛内容社区常见的几个误区</h4>
+            <p>信息太多不知道看哪个、只看热门错过细分话题、收藏夹越堆越乱，这几个常见问题可以提前避免。</p>
+            <div class="tx-card-meta"><span>更新：11月2日</span><b>热度 5.4k</b></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 最新动态 ===================== -->
+  <section class="tx-section" id="tx-updates">
+    <div class="tx-container">
+      <h2 class="tx-section-title">最新更新与热门动态</h2>
+      <p class="tx-section-sub">按时间整理糖心社区近期内容更新，方便追更与收藏。</p>
+      <div class="tx-update-list">
+        <div class="tx-update-item"><span class="tx-update-time">11-07</span><div><h5>本周精选合集已更新</h5><p>糖心社区一周内容精选新增 6 条图文推荐，覆盖生活记录与兴趣分享方向。</p></div></div>
+        <div class="tx-update-item"><span class="tx-update-time">11-07</span><div><h5>新人指南专题补充</h5><p>新增“如何用标签筛选内容”小节，帮助新用户更快建立浏览习惯。</p></div></div>
+        <div class="tx-update-item"><span class="tx-update-time">11-06</span><div><h5>社区讨论热度上升</h5><p>话题“你更习惯看图文还是视频”进入本周讨论榜前列，互动量持续增加。</p></div></div>
+        <div class="tx-update-item"><span class="tx-update-time">11-06</span><div><h5>生活记录分类新增内容</h5><p>生活分享板块新增多篇日常记录，分类入口同步调整排序。</p></div></div>
+        <div class="tx-update-item"><span class="tx-update-time">11-05</span><div><h5>视频推荐栏目改版</h5><p>视频推荐按内容时长和主题重新分组，浏览路径更清晰。</p></div></div>
+        <div class="tx-update-item"><span class="tx-update-time">11-05</span><div><h5>兴趣标签页优化</h5><p>标签页新增关联内容推荐，减少跨分类翻找的成本。</p></div></div>
+        <div class="tx-update-item"><span class="tx-update-time">11-04</span><div><h5>社区精选更新 4 篇</h5><p>编辑精选补充了多篇实用经验类内容，适合收藏后慢慢看。</p></div></div>
+        <div class="tx-update-item"><span class="tx-update-time">11-03</span><div><h5>专题聚合页上线</h5><p>糖心社区新增多个主题合集入口，按系列整理相关内容。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 深度解析正文 ===================== -->
+  <section class="tx-section" id="tx-deep">
+    <div class="tx-container">
+      <h2 class="tx-section-title">深度解析：糖心社区的内容生态与浏览体验</h2>
+      <p class="tx-section-sub">从内容类型、推荐逻辑、互动氛围与适合人群几个角度，拆解这个内容社区的实际使用感受。</p>
+      <div class="tx-article">
+        <h3>一、内容类型与题材特点</h3>
+        <p>
+          糖心社区的内容以兴趣分享为核心，整体上偏向生活化、轻阅读与话题讨论。图文类内容通常篇幅不长，
+          更强调记录感和可读性；视频类内容则更依赖标题与封面来传递信息。社区在分类上覆盖生活分享、话题讨论、
+          图文精选、视频推荐、新人指南、社区精选、兴趣标签和专题聚合等方向，基本可以满足“随便逛逛”和“定向找内容”
+          两种不同的浏览需求。对于搜索“糖心社区”的用户来说，最常关心的往往是这里有哪些内容类型、内容质量如何、
+          以及是否存在清晰的分类体系，这三点在本页的分类入口和推荐卡片中都能找到对应参考。
+        </p>
+        <h3>二、内容吸引点与推荐逻辑</h3>
+        <p>
+          糖心社区的内容吸引力主要来自“聚合感”和“讨论感”。聚合感体现在同一个话题下会集中出现多篇相关分享，
+          读者不需要在多个平台之间来回跳转；讨论感则体现在评论区和话题帖中，用户会围绕内容本身补充观点、分享经验。
+          推荐逻辑上，热门推荐更偏向近期讨论度较高的内容，最新动态则按时间顺序更新，分类入口则承担了“按兴趣定向浏览”的功能。
+          三种入口各有侧重，组合使用比单独依赖某一种更高效。对于希望快速了解社区内容风格的读者，
+          建议先从热门推荐建立印象，再用分类入口深入细分方向。
+        </p>
+        <h3>三、浏览节奏与消费体验</h3>
+        <p>
+          从浏览体验看，糖心社区的页面结构比较清晰，分类、推荐、更新和评论各司其职。移动端阅读时，
+          卡片式布局和标签体系能够减少信息密度过高带来的压迫感；桌面端则更适合同时打开多个分类进行对比浏览。
+          内容消费节奏上，图文内容适合碎片时间快速浏览，话题讨论和深度分享则更适合留出完整时间阅读。
+          对于习惯追更的用户，最新更新模块可以作为一个固定的查看入口；对于偶尔逛逛的用户，
+          热门推荐和社区精选更容易在短时间内提供足够的可读内容。
+        </p>
+        <h3>四、适合人群与同类内容比较</h3>
+        <p>
+          糖心社区更适合对兴趣内容有兴趣、愿意花一点时间浏览和讨论的用户。如果你习惯只看算法推荐的信息流，
+          这里的分类和标签体系可能需要一点适应时间，但适应之后能更精准地找到自己想要的内容方向。
+          与单一内容平台相比，糖心社区的特点在于内容类型更杂、讨论氛围更明显，适合把“看内容”和“聊内容”放在一起的用户。
+          与偏工具型社区相比，这里的内容更偏向阅读与分享，而不是单纯的功能查询。理解这一点，
+          有助于判断糖心社区是否符合自己的内容消费习惯。
+        </p>
+        <h3>五、搜索这个词通常想了解什么</h3>
+        <p>
+          搜索“糖心社区”的用户，关注点通常集中在几个方面：社区里有什么内容、怎么找到感兴趣的分类、
+          热门推荐是否值得参考、新人应该从哪里开始逛、以及社区更新频率如何。本页围绕这些常见意图，
+          把分类入口、热门推荐、最新动态、深度解析和常见问题放在同一个页面中，减少来回搜索的成本。
+          如果你正在判断是否要长期关注这个社区，建议重点看分类体系和更新节奏两部分，这两点最能反映社区的内容活跃度。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 体验指南 ===================== -->
+  <section class="tx-section" id="tx-guide">
+    <div class="tx-container">
+      <h2 class="tx-section-title">浏览与收藏指南</h2>
+      <p class="tx-section-sub">几条简单的使用建议，帮助你把糖心社区逛得更顺。</p>
+      <div class="tx-faq-grid">
+        <div class="tx-faq-item"><h4>先看分类，再看推荐</h4><p>如果对内容方向没有明确目标，先从分类入口建立整体印象，再进入热门推荐，比直接刷信息流更省时间。</p></div>
+        <div class="tx-faq-item"><h4>善用标签做二次筛选</h4><p>糖心社区的标签体系可以帮助你在同一分类下进一步缩小范围，尤其是兴趣类内容，标签比分类更细。</p></div>
+        <div class="tx-faq-item"><h4>把最新动态当作追更入口</h4><p>如果你已经关注了某些内容方向，最新动态比热门推荐更适合用来查看更新，避免反复翻找。</p></div>
+        <div class="tx-faq-item"><h4>收藏夹按主题整理</h4><p>内容社区最容易出现收藏夹越堆越乱的问题，建议按兴趣主题分组整理，后续查找会轻松很多。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="tx-section" id="tx-faq">
+    <div class="tx-container">
+      <h2 class="tx-section-title">常见问题</h2>
+      <p class="tx-section-sub">围绕糖心社区的内容类型、浏览方式和更新节奏，整理常见疑问。</p>
+      <div class="tx-faq-grid">
+        <div class="tx-faq-item"><h4>糖心社区主要有哪些内容类型？</h4><p>整体上以生活分享、话题讨论、图文精选和视频推荐为主，另外还有新人指南、社区精选、兴趣标签和专题聚合等辅助入口。不同类型的内容在篇幅和阅读节奏上差别较大，建议根据自己的时间安排选择。</p></div>
+        <div class="tx-faq-item"><h4>第一次逛应该从哪里开始？</h4><p>建议先看分类入口，确认自己对哪个方向感兴趣，再进入热门推荐或社区精选。如果希望快速了解社区内容风格，一周精选合集是一个比较合适的起点，信息密度适中，涵盖的内容类型也比较全。</p></div>
+        <div class="tx-faq-item"><h4>糖心社区的更新频率如何？</h4><p>从最新动态来看，社区内容基本保持每日更新，热门推荐和精选合集的更新节奏略慢一些，通常按周整理。如果关注的是特定分类，建议以分类入口和标签页为主，更新会更集中。</p></div>
+        <div class="tx-faq-item"><h4>适合哪些人浏览？</h4><p>比较适合对兴趣内容有浏览需求、愿意花时间看分享和讨论的用户。如果你更习惯工具型社区或纯功能性平台，可能需要一点时间适应这里以内容和讨论为主的节奏。</p></div>
+        <div class="tx-faq-item"><h4>热门推荐和最新动态有什么区别？</h4><p>热门推荐更偏向近期讨论度较高的内容，适合快速了解社区当前关注点；最新动态按时间顺序更新，更适合追更和查看具体更新内容。两者结合使用，既能把握整体方向，也不会错过细节。</p></div>
+        <div class="tx-faq-item"><h4>如何判断内容是否值得收藏？</h4><p>可以从三个角度判断：内容是否属于你长期关注的兴趣方向、是否包含可复用的经验或信息、以及是否值得后续回看。收藏夹建议按主题整理，避免只收藏不整理，导致后续查找困难。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 用户评论 ===================== -->
+  <section class="tx-section" id="tx-comments">
+    <div class="tx-container">
+      <h2 class="tx-section-title">社区真实评论</h2>
+      <p class="tx-section-sub">来自近期浏览用户的讨论与反馈，语气和观点尽量保持真实多样。</p>
+      <div class="tx-comment-list">
+        <div class="tx-comment"><div class="tx-avatar" style="background:#b96b4b;">林</div><div class="tx-comment-body"><div class="tx-comment-head"><b>林间慢读</b><small>10月28日</small></div><p>分类做得挺清晰的，第一次进来没有想象中那么迷路。生活分享和图文精选是我常看的两个方向。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#5e8a74;">陈</div><div class="tx-comment-body"><div class="tx-comment-head"><b>陈皮不加糖</b><small>11月1日</small></div><p>热门推荐里的内容质量参差，有些确实值得看，有些标题比较吸引但正文偏短。建议配合分类一起用。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#9c7a52;">周</div><div class="tx-comment-body"><div class="tx-comment-head"><b>周末放空</b><small>10月30日</small></div><p>最新动态更新还挺勤的，每天来看一眼基本都有新内容，追更体验不错。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#7d6592;">许</div><div class="tx-comment-body"><div class="tx-comment-head"><b>许愿不加班</b><small>11月4日</small></div><p>视频推荐栏目改版之后好找多了，之前混在一起容易错过，现在按主题分组清晰不少。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#547f9e;">吴</div><div class="tx-comment-body"><div class="tx-comment-head"><b>吴聊日常</b><small>11月2日</small></div><p>社区讨论氛围还可以，不是那种全是水帖的地方。有几个话题帖的评论比正文还好看。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#a35f5f;">何</div><div class="tx-comment-body"><div class="tx-comment-head"><b>何处安放</b><small>10月29日</small></div><p>收藏夹确实容易乱，看的时候觉得都有用，回头找起来很麻烦。建议官方出个按标签整理收藏的功能。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#b96b4b;">方</div><div class="tx-comment-body"><div class="tx-comment-head"><b>方圆几里</b><small>11月5日</small></div><p>新人指南那篇写得挺实用，尤其是标签筛选那一段，比我瞎翻半天效率高多了。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#5e8a74;">郑</div><div class="tx-comment-body"><div class="tx-comment-head"><b>郑在发呆</b><small>11月3日</small></div><p>整体内容偏轻阅读，适合碎片时间看。如果要找深度长文，可能需要多翻几层。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#9c7a52;">沈</div><div class="tx-comment-body"><div class="tx-comment-head"><b>沈睡森林</b><small>10月31日</small></div><p>一周精选合集做成这样挺好的，省得自己一条条翻。希望后面能固定更新周期。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#7d6592;">韩</div><div class="tx-comment-body"><div class="tx-comment-head"><b>韩式半糖</b><small>11月6日</small></div><p>专题聚合页比想象中好用，按系列整理之后找相关内容方便很多，不用自己拼凑。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#547f9e;">曹</div><div class="tx-comment-body"><div class="tx-comment-head"><b>曹边看边记</b><small>11月1日</small></div><p>移动端阅读体验还行，卡片式布局不挤。就是评论加载偶尔有点慢，其他没什么大问题。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#a35f5f;">白</div><div class="tx-comment-body"><div class="tx-comment-head"><b>白桃气泡</b><small>10月27日</small></div><p>喜欢兴趣标签那个入口，比一级分类更细，找同好内容的时候很省事。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#b96b4b;">顾</div><div class="tx-comment-body"><div class="tx-comment-head"><b>顾自生长</b><small>11月4日</small></div><p>内容风格整体偏温和，不太有攻击性，适合不想看吵架的人。</p></div></div>
+        <div class="tx-comment"><div class="tx-avatar" style="background:#5e8a74;">唐</div><div class="tx-comment-body"><div class="tx-comment-head"><b>唐突的糖</b><small>11月2日</small></div><p>希望热门推荐能多一点筛选维度，现在只有总榜，想按分类看热门还得自己找。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 相关资讯 ===================== -->
+  <section class="tx-section" id="tx-news">
+    <div class="tx-container">
+      <h2 class="tx-section-title">糖心社区相关资讯</h2>
+      <p class="tx-section-sub">围绕内容社区动态、栏目调整与浏览方式整理的近期资讯。</p>
+      <div class="tx-news-grid">
+        <article class="tx-news-item"><time>2026-11-07</time><h4>糖心社区一周内容精选更新，新增多个兴趣方向</h4><p>本周精选合集补充了生活记录与兴趣分享方向的内容，分类入口同步微调，浏览路径更集中。</p></article>
+        <article class="tx-news-item"><time>2026-11-06</time><h4>新人浏览路径调整，分类入口排序优化</h4><p>社区对分类入口的排列顺序做了调整，生活分享与话题讨论位置前移，新用户进入后更容易找到起点。</p></article>
+        <article class="tx-news-item"><time>2026-11-05</time><h4>视频推荐栏目改版，按主题重新分组</h4><p>视频推荐栏目完成改版，内容按主题和时长重新分组，方便用户按兴趣方向浏览。</p></article>
+        <article class="tx-news-item"><time>2026-11-04</time><h4>兴趣标签页新增关联推荐</h4><p>标签页在原有内容列表基础上增加关联推荐，减少跨分类查找的成本。</p></article>
+        <article class="tx-news-item"><time>2026-11-03</time><h4>专题聚合页上线，系列内容集中呈现</h4><p>糖心社区新增专题聚合入口，将同一主题下的系列内容集中展示，适合按系列追更。</p></article>
+        <article class="tx-news-item"><time>2026-11-01</time><h4>社区讨论热度回升，话题互动量增加</h4><p>近期话题讨论区的互动量有所上升，多个生活与兴趣类话题进入讨论榜前列。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 订阅引导 ===================== -->
+  <section class="tx-section" id="tx-subscribe">
+    <div class="tx-container">
+      <div class="tx-subscribe">
+        <div>
+          <h3>订阅糖心社区内容更新提醒</h3>
+          <p>热门推荐、最新动态与专题合集的更新，第一时间知道。</p>
+        </div>
+        <div class="tx-subscribe-form">
+          <input type="email" placeholder="输入邮箱，接收更新提醒" aria-label="订阅邮箱" />
+          <button>订阅</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 页脚 ===================== -->
+  <footer class="tx-footer">
+    <div class="tx-container">
+      <div class="tx-footer-inner">
+        <div class="tx-footer-brand">
+          <div class="tx-logo"><span class="tx-logo-mark">糖</span>糖心社区</div>
+          <p>糖心社区内容专题页，整理社区热门内容、分类入口、更新动态与真实讨论，帮助用户更高效地浏览兴趣内容。本站为内容聚合与导航页面，具体内容以社区实际展示为准。</p>
+        </div>
+        <div class="tx-footer-links">
+          <div class="tx-footer-col">
+            <h5>栏目导航</h5>
+            <a href="/#tx-categories">内容分类</a>
+            <a href="/#tx-hot">热门推荐</a>
+            <a href="/#tx-updates">最新动态</a>
+            <a href="/#tx-deep">深度解析</a>
+          </div>
+          <div class="tx-footer-col">
+            <h5>帮助与反馈</h5>
+            <a href="/#tx-faq">常见问题</a>
+            <a href="/#tx-comments">用户评论</a>
+            <a href="/#tx-news">社区资讯</a>
+            <a href="/#tx-guide">浏览指南</a>
+          </div>
+          <div class="tx-footer-col">
+            <h5>友情链接</h5>
+            <a href="/#tx-hero">内容社区首页</a>
+            <a href="/#tx-hot">兴趣内容聚合</a>
+            <a href="/#tx-updates">更新追踪页</a>
+            <a href="/#tx-faq">帮助中心</a>
+          </div>
+        </div>
+      </div>
+      <div class="tx-footer-bottom">
+        <span>© 2026 糖心社区内容专题页 · 内容仅供浏览参考</span>
+        <span>免责声明：本站为内容整理与导航页面，不对第三方内容承担直接责任。</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+          </html>
